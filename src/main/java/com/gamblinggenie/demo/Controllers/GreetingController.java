@@ -18,6 +18,8 @@ public class GreetingController {
     public String homePage() {
         return "portal";
     }
+
+
     @GetMapping("/worldMap")
     public String worldMapPage(@RequestParam(name="name", required=false, defaultValue="Crazy person ") String name, Model model) {
         greetingService.hello();
