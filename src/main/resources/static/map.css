@@ -12,12 +12,13 @@ body {
 
 h1 {
     color: #333;
+    text-align:center;
 }
 
 p {
     color: #666;
 }
-#viewport {
+viewport {
   position: relative;
   overflow: hidden;          /* We will make or own scrollbars */
   width: 100%;               /* Fit into #editor */
@@ -27,7 +28,7 @@ p {
   justify-content: center;   /* Center the #canvas */
 }
 
-#canvas {
+canvas {
   flex: none;                /* Prevent flexing */
   transform-origin: 50% 50%;
   /* width and height here or rather via your app settings */

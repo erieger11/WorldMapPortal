@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Greeting Page</title>
-    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="stylesheet" type="text/css" href="map.css">
 </head>
     <style>
       #name{
@@ -1591,7 +1591,6 @@
             time = await data.datetime
 
             document.getElementById("time").innerText = `${place}'s time = ${time} ${data.timezone_abbreviation}`
-
     }
 
     document.querySelectorAll(".allPaths").forEach(e => {
@@ -1624,48 +1623,50 @@
         })
 
     })
-                                <!--    const canvas = document.getElementById('worldMapCanvas');-->
-                                <!--    const ctx = canvas.getContext('2d');-->
-                                <!--    const offset = {x: 0, y: 0}; // Canvas offset (0,0 from center)-->
-                                <!--    ctx.fillStyle = 'green';-->
-                                <!--    ctx.fillRect(100 + offset.x, 100 + offset.y, 50, 50);-->
-                                <!--    const bcrVpt = elVpt.getBoundingClientRect();-->
-                                <!--    const bcrCvs = elCvs.getBoundingClientRect();-->
-                                <!--    areaWidth = (bcrVpt.width - padd) * 2 + bcrCvs.width;-->
-                                <!--    areaHeight = (bcrVpt.height - padd) * 2 + bcrCvs.height;-->
-                                <!--offset.x += evt.movementX;-->
-                                <!--offset.y += evt.movementY;-->
-                                <!--    offset.x += pointerStartX - pointerCurrentX;-->
-                                <!--offset.y += pointerStartY - pointerCurrentY;-->
+const canvas = document.getElementById('worldMapCanvas');
+const ctx = canvas.getContext('2d');
+const offset = {x: 0, y: 0}; // Canvas offset (0,0 from center)
+ctx.fillStyle = 'green';
+ctx.fillRect(100 + offset.x, 100 + offset.y, 50, 50);
+const bcrVpt = elVpt.getBoundingClientRect();
+const bcrCvs = elCvs.getBoundingClientRect();
+areaWidth = (bcrVpt.width - padd) * 2 + bcrCvs.width;
+areaHeight = (bcrVpt.height - padd) * 2 + bcrCvs.height;
+offset.x += evt.movementX;
+offset.y += evt.movementY;
+offset.x += pointerStartX - pointerCurrentX;
+offset.y += pointerStartY - pointerCurrentY;
 
-                                <!--const changeScale = (delta) => {-->
-                                <!--  scale *= Math.exp(delta * scaleFactor);-->
-                                <!--    const bcrCvs = elCvs.getBoundingClientRect();-->
+const changeScale = (delta) => {
+  scale *= Math.exp(delta * scaleFactor);
+  const bcrCvs = elCvs.getBoundingClientRect();
+};
 
-                                <!--const x = evt.x - bcrCvs.left - bcrCvs.width / 2;-->
+<!--const x = evt.x - bcrCvs.left - bcrCvs.width / 2;-->
 
-                                <!--const scaleOld = scale;-->
+<!--const scaleOld = scale;-->
 
-                                <!--changeScale(delta);  // PS: scale is now changed!-->
+<!--changeScale(delta);  // PS: scale is now changed!-->
 
-                                <!--const xOrg = xReal / scaleOld;-->
+<!--const xOrg = xReal / scaleOld;-->
 
-                                <!--const xNew = xOrg * scale;  // PS: scale here is the new scale.-->
+<!--const xNew = xOrg * scale;  // PS: scale here is the new scale.-->
 
-                                <!--const xDiff = xReal - xNew;-->
+<!--const xDiff = xReal - xNew;-->
 
-                                <!--const bcrVpt = elVpt.getBoundingClientRect();-->
-                                <!--const bcrCvs = elCvs.getBoundingClientRect();-->
+<!--const bcrVpt = elVpt.getBoundingClientRect();-->
+<!--const bcrCvs = elCvs.getBoundingClientRect();-->
 
-                                <!--areaWidth = (bcrVpt.width - padd) * 2 + bcrCvs.width;-->
+<!--areaWidth = (bcrVpt.width - padd) * 2 + bcrCvs.width;-->
 
-                                <!--const thumbSizeX = bcrVpt.width ** 2 / areaWidth;-->
-                                <!--const cvsRelX = bcrCvs.left - bcrVpt.left;-->
-                                <!--const thumbPosX = (bcrVpt.width - cvsRelX - padd) / bcrVpt.width * thumbSizeX;-->
+<!--const thumbSizeX = bcrVpt.width ** 2 / areaWidth;-->
+<!--const cvsRelX = bcrCvs.left - bcrVpt.left;-->
+<!--const thumbPosX = (bcrVpt.width - cvsRelX - padd) / bcrVpt.width * thumbSizeX;-->
 
-                                <!--elScrXThumb.style.width = `${thumbSizeX}px`;-->
-                                <!--elScrXThumb.style.left = `${thumbPosX}px`;-->
-                                <!--offset.x -= (areaWidth / elVpt.offsetWidth) * evt.movementX;-->
+<!--elScrXThumb.style.width = `${thumbSizeX}px`;-->
+<!--elScrXThumb.style.left = `${thumbPosX}px`;-->
+<!--offset.x -= (areaWidth / elVpt.offsetWidth) * evt.movementX;-->
+
 
 
 </script>

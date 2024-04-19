@@ -15,12 +15,15 @@ public class GreetingController {
     GreetingService greetingService;
 
 
+    @GetMapping("/welcome")
+    public String greeting() {
+        return "welcome";
+    }
 
-
-    @GetMapping("/greeting")
+    @GetMapping("/map")
     public String greeting(@RequestParam(name="name", required=false, defaultValue="Crazy person ") String name, Model model) {
         greetingService.hello();
         model.addAttribute("name", name);
-        return "frontPage";  // This corresponds to src/main/resources/templates/index.html
+        return "map";
     }
 }
