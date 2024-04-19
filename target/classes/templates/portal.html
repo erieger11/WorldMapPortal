@@ -23,10 +23,7 @@
     </div>
 </head>
 <body>
-<h1>Welcome to the World Map Portal!</h1>
-
-
-
+<h1 id="title">World Map Portal!</h1>
 <p id="siteContent">
     Welcome to the World Map Portal! Click the button to select a map.
 </p>
@@ -40,47 +37,49 @@
 
     let language = {
         eng: {
+            header: "World Map Portal!",
             welcome: "Welcome to the World Map Portal! Click the button to select a map."
         },
         es: {
+            header: "¡Portal del mapa mundial!",
             welcome: "¡Bienvenido al Portal del Mapa Mundial! Haga clic en el botón para seleccionar un mapa."
         },
         hin: {
+            header: "विश्व मानचित्र पोर्टल!",
             welcome: "विश्व मानचित्र पोर्टल में आपका स्वागत है! मानचित्र चुनने के लिए बटन पर क्लिक करें।"
         },
         ko: {
+            header: "세계지도 포털!",
             welcome: "세계지도 포털에 오신 것을 환영합니다! 버튼을 클릭하면 지도를 선택할 수 있습니다."
         },
-    ru: {
-        welcome: "Добро пожаловать на портал карты мира! Нажмите кнопку, чтобы выбрать карту."
-    },
-    "zh-Hans": {
-        welcome: "欢迎来到世界地图门户！单击按钮选择地图。"
-    },
-    "zh-Hant": {
-        welcome: "歡迎來到世界地圖門戶！點選按鈕選擇地圖。"
+        ru: {
+            header: "Портал карты мира!",
+            welcome: "Добро пожаловать на портал карты мира! Нажмите кнопку, чтобы выбрать карту."
+        },
+        "zh-Hans": {
+            header: "世界地图门户！",
+            welcome: "欢迎来到世界地图门户！单击按钮选择地图。"
+        },
+        "zh-Hant": {
+            header: "世界地圖門戶！",
+            welcome: "歡迎來到世界地圖門戶！點選按鈕選擇地圖。"
+        }
+    };
+
+    window.addEventListener('hashchange', function() {
+        if (window.location.hash) {
+            let lang = window.location.hash.substring(1);
+            document.getElementById('title').innerHTML = language[lang].header;
+            document.getElementById('siteContent').innerHTML = language[lang].welcome;
+        }
+    });
+
+    // Initial language setup
+    if (window.location.hash) {
+        let lang = window.location.hash.substring(1);
+        document.getElementById('title').innerHTML = language[lang].header;
+        document.getElementById('siteContent').innerHTML = language[lang].welcome;
     }
-};
-
-
-// Check if a hash value exists in the URL
-if (window.location.hash) {
-// Set the content of the webpage
-// depending on the hash value
-if (window.location.hash == "#es") {
-    siteContent.innerHTML = language.es.welcome;
-} else if (window.location.hash == "#hin") {
-    siteContent.innerHTML = language.hin.welcome;
-} else if (window.location.hash == "#ko") {
-    siteContent.innerHTML = language.ko.welcome;
-} else if (window.location.hash == "#ru") {
-    siteContent.innerHTML = language.ru.welcome;
-} else if (window.location.hash == "#zh-Hans") {
-    siteContent.innerHTML = language["zh-Hans"].welcome;
-} else if (window.location.hash == "#zh-Hant") {
-    siteContent.innerHTML = language["zh-Hant"].welcome;
-}
-}
 </script>
 <div class="container">
     <div class="d-grid gap-2">

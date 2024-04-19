@@ -16,20 +16,27 @@ h1 {
 }
 
 p {
-    color: #666;
+    color: #000000;
 }
-viewport {
-  position: relative;
-  overflow: hidden;          /* We will make or own scrollbars */
-  width: 100%;               /* Fit into #editor */
-  height: 100%;
-  display: flex;             /* Center the #canvas */
-  align-items: center;       /* Center the #canvas */
-  justify-content: center;   /* Center the #canvas */
-}
+ #time {
+     width: 6rem;
+     word-wrap: break-word;
+     background-color: #808080;
+     border-radius: 5px;
+     border: 3px black;
+     padding: 5px;
+     font-size: 1.5rem;
+ }
+#name {
+      width: 20rem;
+      word-wrap: break-word;
+      background-color: #808080;
+      border-radius: 5px;
+      border: 3px black;
+      padding: 5px;
+      font-size: 1.5rem;
+  }
 
-canvas {
-  flex: none;                /* Prevent flexing */
-  transform-origin: 50% 50%;
-  /* width and height here or rather via your app settings */
-}
+        svg path{
+            cursor: pointer;
+        }

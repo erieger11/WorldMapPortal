@@ -5,32 +5,6 @@
     <title>Greeting Page</title>
     <link rel="stylesheet" type="text/css" href="worldMap.css">
 </head>
-    <style>
-      #name{
-            position: absolute;
-            background-color: white;
-            width: fit-content
-            opacity: 1;
-            border-radius: 5px
-            border: 3px black
-            padding: 5px
-            font-size 1.5rem;
-        }
-        #time{
-            background-color: white;
-            width: fit-content
-            border-radius: 5px
-            border: 3px black
-            padding:5px
-            font-size 1.5rem;
-        }
-
-        svg path{
-            cursor: pointer;
-        }
-    </style>
-
-
 <body id="body">
 
 <?xml version="1.0"?>
@@ -1582,94 +1556,54 @@
 
 <script>
     async function getUser(place) {
-            const api_url = `https://timezone.abstractapi.com/v1/current_time/?api_key=dcd49e7c0eed4b5285a98157598ed6de&location=${place}`
+        const api_url = `https://timezone.abstractapi.com/v1/current_time/?api_key=dcd49e7c0eed4b5285a98157598ed6de&location=${place}`;
+        document.getElementById("time").innerText = "Loading...";
 
+        try {
             const response = await fetch(api_url);
-
             const data = await response.json();
 
-            time = await data.datetime
+            const time = data.datetime;
 
-            document.getElementById("time").innerText = `${place}'s time = ${time} ${data.timezone_abbreviation}`
+            document.getElementById("time").innerText = `${place}'s time = ${time} ${data.timezone_abbreviation}`;
+        } catch (error) {
+            console.error("Error fetching time:", error);
+            document.getElementById("time").innerText = "Error fetching time";
+        }
     }
 
     document.querySelectorAll(".allPaths").forEach(e => {
         e.setAttribute('class', `allPaths ${e.id}`);
         e.addEventListener("mouseover", function () {
             window.onmousemove=function (j) {
-                x = j.clientX
-                y = j.clientY
-                document.getElementById('name').style.top = y-60  + 'px'
-                document.getElementById('name').style.left = x +10 + 'px'
-            }
-            const classes=e.className.baseVal.replace(/ /g, '.')
-            document.querySelectorAll(`.${classes}`).forEach(country =>{
-                country.style.fill = "green"
-            })
-            document.getElementById("name").style.opacity = 1
-
-            document.getElementById("namep").innerText = e.id
-        })
+                x = j.clientX;
+                y = j.clientY;
+                document.getElementById('name').style.top = y - 60 + 'px';
+                document.getElementById('name').style.left = x + 10 + 'px';
+            };
+            const classes = e.className.baseVal.replace(/ /g, '.');
+            document.querySelectorAll(`.${classes}`).forEach(country => {
+                country.style.fill = "green";
+            });
+            document.getElementById("name").style.opacity = 1;
+            document.getElementById("namep").innerText = e.id;
+        });
         e.addEventListener("mouseleave", function () {
-            const classes=e.className.baseVal.replace(/ /g, '.')
-            document.querySelectorAll(`.${classes}`).forEach(country =>{
-                country.style.fill = "#ececec"
-            })
-            document.getElementById("name").style.opacity = 0
-        })
+            const classes = e.className.baseVal.replace(/ /g, '.');
+            document.querySelectorAll(`.${classes}`).forEach(country => {
+                country.style.fill = "#ececec";
+            });
+            document.getElementById("name").style.opacity = 0;
+        });
 
         e.addEventListener("click",function(){
-            getUser(e.id)
-        })
+            getUser(e.id);
+        });
 
-    })
-const canvas = document.getElementById('worldMapCanvas');
-const ctx = canvas.getContext('2d');
-const offset = {x: 0, y: 0}; // Canvas offset (0,0 from center)
-ctx.fillStyle = 'green';
-ctx.fillRect(100 + offset.x, 100 + offset.y, 50, 50);
-const bcrVpt = elVpt.getBoundingClientRect();
-const bcrCvs = elCvs.getBoundingClientRect();
-areaWidth = (bcrVpt.width - padd) * 2 + bcrCvs.width;
-areaHeight = (bcrVpt.height - padd) * 2 + bcrCvs.height;
-offset.x += evt.movementX;
-offset.y += evt.movementY;
-offset.x += pointerStartX - pointerCurrentX;
-offset.y += pointerStartY - pointerCurrentY;
-
-const changeScale = (delta) => {
-  scale *= Math.exp(delta * scaleFactor);
-  const bcrCvs = elCvs.getBoundingClientRect();
-};
-
-<!--const x = evt.x - bcrCvs.left - bcrCvs.width / 2;-->
-
-<!--const scaleOld = scale;-->
-
-<!--changeScale(delta);  // PS: scale is now changed!-->
-
-<!--const xOrg = xReal / scaleOld;-->
-
-<!--const xNew = xOrg * scale;  // PS: scale here is the new scale.-->
-
-<!--const xDiff = xReal - xNew;-->
-
-<!--const bcrVpt = elVpt.getBoundingClientRect();-->
-<!--const bcrCvs = elCvs.getBoundingClientRect();-->
-
-<!--areaWidth = (bcrVpt.width - padd) * 2 + bcrCvs.width;-->
-
-<!--const thumbSizeX = bcrVpt.width ** 2 / areaWidth;-->
-<!--const cvsRelX = bcrCvs.left - bcrVpt.left;-->
-<!--const thumbPosX = (bcrVpt.width - cvsRelX - padd) / bcrVpt.width * thumbSizeX;-->
-
-<!--elScrXThumb.style.width = `${thumbSizeX}px`;-->
-<!--elScrXThumb.style.left = `${thumbPosX}px`;-->
-<!--offset.x -= (areaWidth / elVpt.offsetWidth) * evt.movementX;-->
-
-
-
+    });
 </script>
+
+
 
 
 
