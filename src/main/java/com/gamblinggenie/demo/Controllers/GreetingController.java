@@ -14,16 +14,14 @@ public class GreetingController {
     @Autowired
     GreetingService greetingService;
 
-
-    @GetMapping("/welcome")
-    public String greeting() {
-        return "welcome";
+    @GetMapping("/portal")
+    public String homePage() {
+        return "portal";
     }
-
-    @GetMapping("/map")
-    public String greeting(@RequestParam(name="name", required=false, defaultValue="Crazy person ") String name, Model model) {
+    @GetMapping("/worldMap")
+    public String worldMapPage(@RequestParam(name="name", required=false, defaultValue="Crazy person ") String name, Model model) {
         greetingService.hello();
         model.addAttribute("name", name);
-        return "map";
+        return "worldMap";
     }
 }
