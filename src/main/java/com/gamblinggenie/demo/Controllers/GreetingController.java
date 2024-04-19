@@ -14,6 +14,13 @@ public class GreetingController {
     @Autowired
     GreetingService greetingService;
 
+    @GetMapping("/login")
+    public String loginPage(@RequestParam(name="name", required=false, defaultValue="Crazy person ") String name, Model model) {
+        model.addAttribute("name", name);
+        return "login";
+    }
+
+
     @GetMapping("/portal")
     public String homePage() {
         return "portal";
@@ -21,9 +28,8 @@ public class GreetingController {
 
 
     @GetMapping("/worldMap")
-    public String worldMapPage(@RequestParam(name="name", required=false, defaultValue="Crazy person ") String name, Model model) {
+    public String worldMapPage() {
         greetingService.hello();
-        model.addAttribute("name", name);
         return "worldMap";
     }
 }

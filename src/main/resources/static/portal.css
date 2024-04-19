@@ -16,70 +16,78 @@ h1 {
 }
 
 p {
-padding: 1;
+    padding: 1;
     text-align: center;
     color: black;
 }
+.form-control {
+    width: 45%;
+    max-width: 300px;
+    margin: 0 auto;
+    position: center;
+}
+
 
 .btn {
-  border: none;
-  font-family: 'Lato';
-  font-size: inherit;
-  color: inherit;
-  background: none;
-  cursor: pointer;
-  padding: 25px 80px;
-  display: inline-block;
-  margin: 15px 30px;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  font-weight: 700;
-  outline: none;
-  position: relative;
-  -webkit-transition: all 0.3s;
-  -moz-transition: all 0.3s;
-  transition: all 0.3s;
+    border: none;
+    font-family: 'Lato';
+    font-size: inherit;
+    color: white;
+    background: none;
+    cursor: pointer;
+    padding: 25px 80px;
+    display: inline-block;
+    margin: 15px 30px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 700;
+    outline: none;
+    position: relative;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s;
 }
 
 .btn:after {
-  content: '';
-  position: absolute;
-  z-index: -1;
-  -webkit-transition: all 0.3s;
-  -moz-transition: all 0.3s;
-  transition: all 0.3s;
+    content: '';
+    position: absolute;
+    z-index: -1;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s;
 }
 
 .btn-1 {
-  background: #808080 !important;
-  color: #fff;
-  margin: 0 auto;
-  display: block;
-  padding: 10px 20px;
+    background: #808080 !important;
+    color: #fff;
+    margin: 0 auto;
+    display: block;
+    padding: 10px 20px;
 }
 
 .btn-1:hover {
-  background: #2980b9;
+    background: #2980b9;
 }
 
 .btn-1:active {
-  background: #2980b9;
-  top: 2px;
+    background: #2980b9;
+    top: 2px;
 }
 
 .btn-1:before {
-  position: absolute;
-  height: 100%;
-  left: 0;
-  top: 0;
-  line-height: 3;
-  font-size: 140%;
-  width: 60px;
+    position: absolute;
+    height: 100%;
+    left: 0;
+    top: 0;
+    line-height: 3;
+    font-size: 140%;
+    width: 60px;
 }
 
 .dropdown-menu {
-  font-family: Arial, sans-serif;
-  background-color: #808080 !important;
-  padding: 0;
-  margin-top: 5px;
+    font-family: Arial, sans-serif;
+    background-color: #808080 !important;
+    padding: 0;
+    margin-top: 5px;
+    color: white;
 }
