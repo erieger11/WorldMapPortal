@@ -41,6 +41,11 @@
 <div id="timeCont">
     <p id="time">Time</p>
 </div>
+<div id="editor">
+    <div id="viewport"><div id="canvas"></div></div>
+    <div class="scrollTrack" id="scrollTrack-x"><div class="scrollThumb"></div></div>
+    <div class="scrollTrack" id="scrollTrack-y"><div class="scrollThumb"></div></div>
+</div>
 
 <svg id="allSvg" baseprofile="tiny" fill="#ececec" stroke="black" stroke-linecap="round" stroke-linejoin="round"
      version="1.2" viewbox="0 0 2000 857" xmlns="http://www.w3.org/2000/svg">
@@ -1577,7 +1582,7 @@
 
 <script>
     async function getUser(place) {
-            const api_url = `https://timezone.abstractapi.com/v1/current_time/?api_key=YOUR_API_KEY&location=${place}`
+            const api_url = `https://timezone.abstractapi.com/v1/current_time/?api_key=dcd49e7c0eed4b5285a98157598ed6de&location=${place}`
 
             const response = await fetch(api_url);
 
@@ -1619,6 +1624,49 @@
         })
 
     })
+                                <!--    const canvas = document.getElementById('worldMapCanvas');-->
+                                <!--    const ctx = canvas.getContext('2d');-->
+                                <!--    const offset = {x: 0, y: 0}; // Canvas offset (0,0 from center)-->
+                                <!--    ctx.fillStyle = 'green';-->
+                                <!--    ctx.fillRect(100 + offset.x, 100 + offset.y, 50, 50);-->
+                                <!--    const bcrVpt = elVpt.getBoundingClientRect();-->
+                                <!--    const bcrCvs = elCvs.getBoundingClientRect();-->
+                                <!--    areaWidth = (bcrVpt.width - padd) * 2 + bcrCvs.width;-->
+                                <!--    areaHeight = (bcrVpt.height - padd) * 2 + bcrCvs.height;-->
+                                <!--offset.x += evt.movementX;-->
+                                <!--offset.y += evt.movementY;-->
+                                <!--    offset.x += pointerStartX - pointerCurrentX;-->
+                                <!--offset.y += pointerStartY - pointerCurrentY;-->
+
+                                <!--const changeScale = (delta) => {-->
+                                <!--  scale *= Math.exp(delta * scaleFactor);-->
+                                <!--    const bcrCvs = elCvs.getBoundingClientRect();-->
+
+                                <!--const x = evt.x - bcrCvs.left - bcrCvs.width / 2;-->
+
+                                <!--const scaleOld = scale;-->
+
+                                <!--changeScale(delta);  // PS: scale is now changed!-->
+
+                                <!--const xOrg = xReal / scaleOld;-->
+
+                                <!--const xNew = xOrg * scale;  // PS: scale here is the new scale.-->
+
+                                <!--const xDiff = xReal - xNew;-->
+
+                                <!--const bcrVpt = elVpt.getBoundingClientRect();-->
+                                <!--const bcrCvs = elCvs.getBoundingClientRect();-->
+
+                                <!--areaWidth = (bcrVpt.width - padd) * 2 + bcrCvs.width;-->
+
+                                <!--const thumbSizeX = bcrVpt.width ** 2 / areaWidth;-->
+                                <!--const cvsRelX = bcrCvs.left - bcrVpt.left;-->
+                                <!--const thumbPosX = (bcrVpt.width - cvsRelX - padd) / bcrVpt.width * thumbSizeX;-->
+
+                                <!--elScrXThumb.style.width = `${thumbSizeX}px`;-->
+                                <!--elScrXThumb.style.left = `${thumbPosX}px`;-->
+                                <!--offset.x -= (areaWidth / elVpt.offsetWidth) * evt.movementX;-->
+
 
 </script>
 
