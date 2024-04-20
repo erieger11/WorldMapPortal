@@ -101,11 +101,11 @@ svg path {
 }
 
 .btn.btn-3 {
-    color: white; /* Button text color */
+    color: white;
 }
 
 .btn.btn-3:hover {
-    background: #2980b9; /* Hover background color */
+    background: #2980b9;
 }
 
 
@@ -118,7 +118,7 @@ svg path {
     padding: 10px 20px;
     position: fixed;
     top: 15px;
-    right: 140px;
+    right: 10px;
 }
 
 
@@ -144,9 +144,9 @@ svg path {
 }
 
 .btn.btn-4 {
-    color: white; /* Button text color */
+    color: white;
 }
 
 .btn.btn-4:hover {
-    background: #2980b9; /* Hover background color */
+    background: #2980b9;
 }

@@ -50,7 +50,7 @@ p {
 
 .btn:hover,
 .btn:active {
-    background: #2980b9; /* Hover and active background color */
+    background: #2980b9;
 }
 
 .btn:after {
@@ -97,12 +97,10 @@ p {
     margin-top: 5px;
     color: white;
 }
-
-/* Additional styles for the login button */
 .btn.btn-1 {
-    color: white; /* Button text color */
+    color: white;
 }
 
 .btn.btn-1:hover {
-    background: #2980b9; /* Hover background color */
+    background: #2980b9;
 }

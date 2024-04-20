@@ -1,13 +1,23 @@
 package com.gamblinggenie.demo.Services;
+import com.gamblinggenie.demo.Model.User;
 import org.springframework.stereotype.Service;
-
+import java.util.HashMap;
 
 
 @Service
 public class GreetingService {
-    public void hello(){
-        System.out.println("hello");
+
+    HashMap<String, String> accounts = new HashMap<>();
+
+    public void add(){
+        accounts.put("ethan","poop");
+        accounts.put("bob","pee");
     }
 
+
+    public boolean validateUser(User user){
+        add();
+        return user.getPassword().equals(accounts.get(user.getUsername()));
+    }
 
 }
