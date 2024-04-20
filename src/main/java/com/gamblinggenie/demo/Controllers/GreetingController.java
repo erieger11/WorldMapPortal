@@ -12,14 +12,18 @@ public class GreetingController {
     @Autowired
     GreetingService greetingService;
 
-    @GetMapping("/login")
-    public User loginPage(@RequestParam(name="username", required=true, defaultValue="Crazy person") String username,
-                            @RequestParam(name="password", required=true, defaultValue="Crazy person") String password) {
-        User user = new User(username,password);
-         greetingService.validateUser(user);
-         return user;
-    }
+//    @GetMapping("/login")
+//    public User loginPage(@RequestParam(name="username", required=true, defaultValue="Crazy person") String username,
+//                            @RequestParam(name="password", required=true, defaultValue="Crazy person") String password) {
+//        User user = new User(username,password);
+//         greetingService.validateUser(user);
+//         return user;
+//    }
 
+    @GetMapping("/login")
+    public String loginPage(){
+        return "login";
+    }
 
     @GetMapping("/portal")
     public String homePage() {

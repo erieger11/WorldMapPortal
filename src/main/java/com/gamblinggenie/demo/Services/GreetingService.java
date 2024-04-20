@@ -10,8 +10,8 @@ public class GreetingService {
     HashMap<String, String> accounts = new HashMap<>();
 
     public void add(){
-        accounts.put("ethan","poop");
-        accounts.put("bob","pee");
+        accounts.put("ethan","1234");
+        accounts.put("bob","4321");
     }
 
 
