@@ -32,4 +32,8 @@ public class GreetingController {
         greetingService.hello();
         return "worldMap";
     }
+    @GetMapping("/unitedStates")
+    public String unitesStatesPage() {
+        return "unitedStates";
+    }
 }

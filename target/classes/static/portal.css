@@ -20,13 +20,13 @@ p {
     text-align: center;
     color: black;
 }
+
 .form-control {
     width: 45%;
     max-width: 300px;
     margin: 0 auto;
     position: center;
 }
-
 
 .btn {
     border: none;
@@ -89,19 +89,89 @@ p {
     width: 60px;
 }
 
+.btn-2 {
+    background: #808080 !important;
+    color: #fff;
+    padding: 10px 20px;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.btn-2:hover {
+    background: #2980b9;
+}
+
+.btn-2:active {
+    background: #2980b9;
+    top: 2px;
+}
+
+.btn-2:before {
+    content: '';
+    position: absolute;
+    height: 100%;
+    right: 0;
+    top: 0;
+    line-height: 3;
+    font-size: 140%;
+    width: 60px;
+}
+
+.dropdown.map {
+    text-align: center;
+    margin-top: 20px;
+    position: relative;
+    background-color: #808080 !important;
+
+}
+
+.dropdown-map {
+    font-family: Arial, sans-serif;
+    background-color: #808080 !important;
+    padding: 0;
+    margin-top: 5px;
+    color: white;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: max-content;
+    white-space: nowrap;
+    list-style: none;
+    padding: 0;
+}
+
+.dropdown-map li {
+    padding: 10px; /* Add padding to the list items */
+    text-align: center; /* Center align the text */
+}
+
+.dropdown-map li:hover {
+    background-color: #555; /* Change background color on hover */
+}
+
 .dropdown-menu {
     font-family: Arial, sans-serif;
     background-color: #808080 !important;
     padding: 0;
     margin-top: 5px;
     color: white;
+    left: 0;
+    top: 0;
 }
 
-/* Additional styles for the login button */
 .btn.btn-1 {
-    color: white; /* Button text color */
+    color: white;
 }
 
 .btn.btn-1:hover {
+    background: #2980b9; /* Hover background color */
+}
+
+.btn.btn-2 {
+    color: white; /* Button text color */
+}
+
+.btn.btn-2:hover {
     background: #2980b9; /* Hover background color */
 }

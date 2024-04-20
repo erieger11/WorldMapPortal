@@ -2,21 +2,31 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Greeting Page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap demo</title>
     <link rel="stylesheet" type="text/css" href="worldMap.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+
 </head>
 
 <body id="body">
+
+<div>
+    <a href="/login" class="btn btn-3 btn-sep icon-info">Logout</a>
+</div>
+<div>
+    <a href="/portal" class="btn btn-4 btn-sep icon-info">Portal</a>
+</div>
 
 <?xml version="1.0"?>
 
 <div id="timeCont">
     <p id="time">Time</p>
 </div>
-
 <div id="name">
     <p id="namep">Name</p>
 </div>
+
 
 <div id="editor">
     <div id="viewport"><div id="canvas"></div></div>
@@ -1556,6 +1566,7 @@
 
 </body>
 
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
 <script>
     async function getUser(place) {

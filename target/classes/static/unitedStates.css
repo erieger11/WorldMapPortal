@@ -3,13 +3,18 @@ body {
     background-color: #34568B !important;
     margin: 0;
     padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
 }
 
-.greeting-container {
-    text-align: center;
-    margin-top: 50px;
+#editor {
+    width: 80%;
+    height: 80%;
+    overflow: auto;
+    position: relative;
 }
-
 h1 {
     color: #333;
     text-align: center;
